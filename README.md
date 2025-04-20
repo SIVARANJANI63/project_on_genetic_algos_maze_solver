@@ -1,46 +1,89 @@
-# project_on_genetic_algos_maze_solver
-Genetic Algorithm-Based Maze Solver
+# 🧠 Maze Solver using Genetic Algorithm
 
-Overview
+This project demonstrates how a Genetic Algorithm (GA) can be applied to solve a maze pathfinding problem. By simulating evolution through selection, crossover, and mutation, the algorithm learns to navigate from the start to the goal in a complex grid-based maze.
 
-This project implements a genetic algorithm to solve a maze problem. It uses evolutionary computation techniques to find an optimal path through a given maze.
+---
 
-Features
+## 📌 Project Highlights
 
-Uses DEAP library for evolutionary algorithms
+- 🧬 **Evolutionary Algorithm** with DEAP
+- 🗺️ **Pathfinding in a Maze**
+- 🖼️ **Visual Maze Path Plots**
+- 📉 **Fitness based on Manhattan Distance**
+- 🧪 Includes mutation, crossover, and selection
 
-Implements selection, mutation, and crossover operations
+---
 
-Visualizes results using Matplotlib
+## 🧭 Maze Description
 
-Installation
+The maze is represented as a 2D grid:
+- `0` = Walkable path
+- `1` = Wall (blocked path)
 
-To run this project, install the required dependencies:
+The goal is to move from the **top-left corner** `(0, 0)` to the **bottom-right corner** `(14, 14)` avoiding walls.
 
-pip install matplotlib deap numpy
+---
 
-Usage
+## 🧮 Algorithm Logic
 
-Run the Jupyter Notebook.
+- **Individual Representation**: A list of directions (`['U', 'D', 'L', 'R']`)
+- **Fitness Function**: Manhattan distance from the current position to the goal
+- **Selection**: Tournament
+- **Crossover**: Uniform crossover
+- **Mutation**: Random directional changes
 
-The script initializes a maze and applies a genetic algorithm to find the shortest path.
+---
 
-Visualizations are generated to illustrate the optimization process.
+## 🔧 Dependencies
 
-Dependencies
+```bash
+pip install matplotlib deap
 
-Python
+```
+## 🚀 How It Works
 
-NumPy
+1. 🎲 **Random individuals (paths)** are created using directional moves: `'U'`, `'D'`, `'L'`, `'R'`.
+2. 🧪 **Each individual is evaluated** by simulating its path in the maze.
+3. 🏆 The algorithm **selects the fittest individuals**, applies **crossover** and **mutation** to create the next generation.
+4. 🔁 This evolutionary process repeats for a fixed number of generations or until the path successfully reaches the goal.
 
-Matplotlib
+---
 
-DEAP (Distributed Evolutionary Algorithms in Python)
+## 📊 Visualization
 
-Author
+At specific generations (e.g., Gen 2, 10, 50, 100, 500, Final), the best path found is visualized using `matplotlib`:
 
-[Your Name]
+- ✅ **Start Point**: Green
+- 🔵 **Path Traversed**: Blue
+- 🔴 **Goal Point**: Red
+- ⚫ **Walls**: Black
+- ⚪ **Free Path**: White
 
-License
+Each path visualization shows how the algorithm learns and evolves better paths through generations!
 
-This project is licensed under the MIT License.
+---
+
+## 📁 File Structure
+
+```plaintext
+maze_ga_solver.py      # Main script
+README.md              # This file
+
+```
+
+🛠️ Improvements to Try
+🧩 Add dynamic maze input from the user
+
+➕ Introduce diagonal movements ('UL', 'UR', 'DL', 'DR')
+
+🧠 Integrate with A* for hybrid optimization
+
+💾 Save the best path and result to a file or export as image
+
+🙌 Acknowledgements
+🧬 DEAP – Distributed Evolutionary Algorithms in Python
+
+📚 Inspiration from classic AI pathfinding problems and genetic programming techniques
+
+📌 Author
+Sivaranjani A
